@@ -1,0 +1,5 @@
+#Log fajlok:
+*.log
+
+# Adatbazis motorok
+*.db

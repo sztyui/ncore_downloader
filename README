@@ -1,0 +1,7 @@
+Ncore letöltő alkalmazás.
+A config_films.py fájlban add meg, hogy mit szereténl letölteni python tömbben dictionary ként.
+Meg tudod adni a műfajt típust miegymást is.
+
+A main függvényben add meg a felhasználó nevedet ncore-ra illetve a jelszavadat is.
+
+Bizonyos időközönként berakhatod crontabba, hogy leszedje automatikusan amit szeretnél. :)
