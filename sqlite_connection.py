@@ -7,9 +7,12 @@ import os
 import sqlite3
 import datetime
 
+<<<<<<< HEAD
 
 sample = {'link': 'https://ncore.cc/torrents.php?action=details&id=2162131', 'cim': 'Szulejmán S04E28', 'datum': datetime.datetime(2017, 8, 30, 23, 32, 45)}
 
+=======
+>>>>>>> 851d0773152eac545398d98440fe076936a44eef
 class DB(object):
 	"SQLlite3 database implementation."
 	
@@ -65,4 +68,8 @@ class DB(object):
 				)).fetchone()
 		if not val is None:
 			return True
+<<<<<<< HEAD
 		else: return False
+=======
+		else: return False
+>>>>>>> 851d0773152eac545398d98440fe076936a44eef

@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 
 # Log fajlok:
+=======
+#Log fajlok:
+>>>>>>> 851d0773152eac545398d98440fe076936a44eef
 *.log
 
 # Adatbazis motorok
 *.db
+<<<<<<< HEAD
 
 # Konfigurációs fájlok
 *config*
@@ -13,3 +18,5 @@ __pycache__/*
 
 # pack mappa
 pack/*
+=======
+>>>>>>> 851d0773152eac545398d98440fe076936a44eef

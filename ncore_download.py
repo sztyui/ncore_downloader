@@ -20,7 +20,7 @@ class nCore(object):
 		#self._webdriver = webdriver.Firefox(firefox_options=__options, 
 		#	executable_path=os.path.join(os.path.dirname(os.path.realpath(__file__)), "pack/geckodriver"))
 		self._webdriver = webdriver.PhantomJS(
-			os.path.join(os.path.dirname(os.path.realpath(__file__)), "pack/phantomjs-2.1.1-linux-x86_64/bin/phantomjs"))
+			os.path.join(os.path.dirname(os.path.realpath(__file__)), "pack/phantomjs-2.1.1-linux-x86_64/bin/phantomjs "))
 
 		self._webdriver.get(self.__ncore_url + "/login.php")
 
@@ -33,9 +33,6 @@ class nCore(object):
 		password.send_keys(passwd)
 
 		submit_button.submit()
-
-		with open("/home/pityu/Asztal/page.html", "w") as fout:
-			fout.write(self._webdriver.page_source)
 
 	def __category_check(self, category):
 		if not category or not isinstance(category, dict):
