@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+# -*- coding=utf-8 -*-
+# Ncore downloader application
+
+import os
+import shutil
+import notify2
+import ncore_download as ncore
+import sqlite_connection as sqlite
+
+from config_films import download_files
+from loginconfig import config_attributes
+
+def ertesit(msg):
+    notify2.init("Ncore letoltes.")
+    n = notify2.Notification("Ncore letoltes", msg, "")
+    n.show()
+
+def main():
+	nc = ncore.nCore(*config_attributes)
+
+	for elem in download_files:
+		eredmeny = nc.search(*elem)
+		if len(eredmeny) > 0:
+			db = sqlite.DB()
+			if db.contains(**eredmeny[0]):
+				ertesit("Mar van ilyen fajl: {0}".format(eredmeny[0]['cim']))
+			else:
+				db.add(**eredmeny[0])
+				torrent_file = nc.download(**eredmeny[0])
+				shutil.move(
+					torrent_file,
+					"/home/pityu/Letöltések/browser/"
+					)
+				db.commit()
+				ertesit("Torrent hozzaadva: {0}".format(eredmeny[0].get("cim")))
+		else:
+			ertesit("Nem találtam ilyet: {0}".format(*elem))
+
+if __name__ == "__main__":
+	main()

@@ -1,0 +1,15 @@
+
+# Log fajlok:
+*.log
+
+# Adatbazis motorok
+*.db
+
+# Konfigurációs fájlok
+*config*
+
+# __pycache__ mappa
+__pycache__/*
+
+# pack mappa
+pack/*
